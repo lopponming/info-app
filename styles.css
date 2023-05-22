@@ -202,6 +202,11 @@ button:hover {
     height: 0;
 }  */
 
+#howToDoThis {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .headerContainer {
     display: flex;
     align-items: center;
