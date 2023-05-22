@@ -69,12 +69,25 @@ h2 {
     letter-spacing: 0.2rem;
 }
   
-#tooltip, #howToDoThisHelp {
+#tooltip {
     display: none;
     position: absolute;
     top: 90px;
     right: 30px;
     width: 200px;
+    color: #e3e3e3;
+    background-color: #17283c;
+    border: 2px solid #dc8f8f;
+    padding: 10px;
+    z-index: 9999;
+}
+
+#howToDoThisHelp {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    width: 190px;
     color: #e3e3e3;
     background-color: #17283c;
     border: 2px solid #dc8f8f;
@@ -192,8 +205,10 @@ button:hover {
 
 #submit-btn {
     justify-content: center;
+    letter-spacing: 0.2rem;
     margin-top: 2rem;
     background-color: #dca2a2;
+    padding: 1rem;
 }
 
 /* basket styles (aka the basket that includes minors, free-choice and so on */
@@ -205,11 +220,17 @@ button:hover {
 #howToDoThis {
     display: flex;
     flex-direction: row-reverse;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .headerContainer {
     display: flex;
     align-items: center;
+}
+
+.studyBasketHeader:hover #howToDoThisHelp {
+    display: block;
+    cursor: pointer;
 }
 
 aside#studyBasketRight {
@@ -232,7 +253,7 @@ aside#studyBasketRight {
     text-shadow: 1px 1px 5px #23272b;
     padding: 1rem;
     margin: 0 0 1rem 0;
-    min-width: 86px;
+    min-width: 110px;
 }
 
 ul.course-list {

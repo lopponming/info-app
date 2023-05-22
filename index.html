@@ -1085,6 +1085,9 @@ $('#submit-btn').on('click', function () {
     })
     
     console.log(profession);
+
+    // Show alert pop-up
+    alert("Thank you so much for your help!");
 })
 function findProfessionByName(professionName) {
     const profession = studyPlanner.professions.find(prof => prof.professionName == professionName);
