@@ -1,0 +1,63 @@
+/* Styling the dropdown options */
+
+/* UX */
+#profession-list option[value="ui designer"],
+#profession-list option[value="social media manager"],
+#profession-list option[value="web designer"],
+#profession-list option[value="ux designer"] {
+    background-color: #b0b0fc;
+}
+
+/* GAMES */
+#profession-list option[value="game designer"],
+#profession-list option[value="games animator"],
+#profession-list option[value="video game producer"],
+#profession-list option[value="3d-modeler"],
+#profession-list option[value="games artist"] {
+    background-color: #ffbfff;
+}
+
+/* VISUAL */
+#profession-list option[value="visual designer"],
+#profession-list option[value="animator"],
+#profession-list option[value="motion graphic artist"],
+#profession-list option[value="visual concept designer"],
+#profession-list option[value="storyboard artist"],
+#profession-list option[value="junior vfx artist"],
+#profession-list option[value="graphic designer"],
+#profession-list option[value="illustrator"] {
+  background-color: #ffb1b1;
+}
+
+/* FINE ART */
+#profession-list option[value="sound artist"],
+#profession-list option[value="futurologist"],
+#profession-list option[value="media artist"],
+#profession-list option[value="art mediator"],
+#profession-list option[value="installation artist"],
+#profession-list option[value="art producer"],
+#profession-list option[value="art curator"],
+#profession-list option[value="photographic artist"],
+#profession-list option[value="video artist"],
+#profession-list option[value="art event producer"],
+#profession-list option[value="concept artist"],
+#profession-list option[value="artist"],
+#profession-list option[value="contemporary artist"] {
+  background-color: #feffb4;
+}
+
+/* SOUND/MUSIC */
+#profession-list option[value="event promoter"],
+#profession-list option[value="mixing engineer"],
+#profession-list option[value="live/streaming engineer"],
+#profession-list option[value="recording engineer"],
+#profession-list option[value="music publisher"],
+#profession-list option[value="label a&r"],
+#profession-list option[value="music producer"],
+#profession-list option[value="audiobook editor"],
+#profession-list option[value="sound engineer"],
+#profession-list option[value="song writer"],
+#profession-list option[value="game sound designer"],
+#profession-list option[value="sound designer"] {
+  background-color: #bdffbd;
+}

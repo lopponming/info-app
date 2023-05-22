@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>study paths</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>what to study for the <em>&nbsp;right&nbsp;</em> profession?</h1>
+
+<form id="my-form">
+    <!-- Profession input fields -->
+    <label for="profession-name">Profession name:</label>
+    <input type="text" id="profession-name">
+    <button id="add-profession-btn">add profession</button>
+
+    <!-- Minor input fields -->
+    <label for="minor-name">Minor name:</label>
+    <input type="text" id="minor-name">
+    <label for="minor-importance">Minor importance:</label>
+    <input type="number" id="minor-importance">
+    <button id="add-minor-btn">add minor</button>
+
+    <!-- Course input fields -->
+    <label for="course-name">Course name:</label>
+    <input type="text" id="course-name">
+    <label for="credits">Credits:</label>
+    <input type="number" id="credits">
+    <button id="add-course-btn">add course</button>
+
+    <!-- Minor scheduling input fields -->
+    <label for="minor-scheduled-time">Minor scheduled time:</label>
+    <select id="minor-scheduled-time">
+      <option value="spring">Spring</option>
+      <option value="fall">Fall</option>
+    </select>
+    <button id="add-minor-scheduling-btn">add minor scheduling</button>
+
+    <button id="submit-btn">SUBMIT</button>
+</form>
+
+
+    <footer>copyright 2023 miranda klockars</footer>
+
+
+    <script>
+
+        let studyPlanner = {
+            professions: [
+                {
+                    professionName: 'graphic designer',
+                    relevantMinors: [
+                        {
+                            minorName: 'visual design',
+                            minorImportance: 10
+                        }
+                    ]
+                }
+            ],
+            minors: [
+                {
+                    minorName: 'visual design',
+                    scheduledTime: 'spring',
+                    courses: [
+                        {
+                            courseName: 'principles of visual design',
+                            credits: 5
+                        }
+                    ]
+                }
+            ]
+        }
+
+    // Get HTML elements
+    const professionNameInput = document.getElementById('profession-name');
+    const addProfessionBtn = document.getElementById('add-profession-btn');
+    const minorNameInput = document.getElementById('minor-name');
+    const minorImportanceInput = document.getElementById('minor-importance');
+    const addMinorBtn = document.getElementById('add-minor-btn');
+    const courseNameInput = document.getElementById('course-name');
+    const creditsInput = document.getElementById('credits');
+    const addCourseBtn = document.getElementById('add-course-btn');
+    const minorScheduledTimeInput = document.getElementById('minor-scheduled-time');
+    const addMinorSchedulingBtn = document.getElementById('add-minor-scheduling-btn');
+
+    // Add event listeners
+    addProfessionBtn.addEventListener('click', addProfession);
+    addMinorBtn.addEventListener('click', addMinor);
+    addCourseBtn.addEventListener('click', addCourse);
+    addMinorSchedulingBtn.addEventListener('click', addMinorScheduling);
+
+    // Function to ADD A PROFESSION
+    function addProfession() {
+      const professionName = professionNameInput.value;
+      const profession = { professionName, relevantMinors: [] };
+      studyPlanner.professions.push(profession);
+      // Update the display of professions
+    }
+
+    addProfessionButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const professionName = professionNameInput.value;
+    });
+
+
+
+    </script>
+    
+</body>
+</html>
