@@ -208,7 +208,9 @@ button:hover {
     letter-spacing: 0.2rem;
     margin-top: 2rem;
     background-color: #dca2a2;
+    color: #ffffff;
     padding: 1rem;
+    font-weight: 400;
 }
 
 /* basket styles (aka the basket that includes minors, free-choice and so on */
@@ -236,7 +238,7 @@ button:hover {
 aside#studyBasketRight {
     display: flex;
     flex-direction: column;
-    min-width: 335px;
+    max-width: 335px;
 }
 
 #studyBasketRight h4 {
