@@ -51,6 +51,15 @@
             <div class="input-box">
                 <div class="theMinorName">
                     <label for="minor-name">MINOR:</label>
+                    <select id="minorTiming">
+                        <option value="" selected>1st year spring</option>
+                        <option value="2ndYearFall">2nd year fall</option>
+                        <option value="2ndYearSpring">2nd year spring</option>
+                        <option value="3rdYearFall">3rd year fall</option>
+                        <option value="3rdYearSpring">3rd year spring</option>
+                        <option value="4thYearFall">4th year fall</option>
+                        <option value="4thYearSpring">4th year spring</option>
+                    </select>
                     <input type="text" id="minor-name" class="selectedMinor" placeholder="drop minor here">
                 </div>
                 <div class="theMinorImportance">
@@ -1059,25 +1068,6 @@ $('.toggleable').click(function() {
     $('.basicStudies').toggle(courseType == 'basic');
     $('.freeChoice').toggle(courseType == 'free-choice');
 });
-
-
-//DROPPABLE minors BUT hide the minor courses once dropped THAT DOESN*T WORK
-/* $('.input-box').droppable({
-    drop: function (event, ui) {
-        // Get the text from the dropped element
-        var text = ui.draggable.text().trim();
-
-        // Check if the dropped element is a minor
-        var minor = studyPlanner.minors.find(function (minor) {
-            return minor.minorName === text;
-        });
-
-        // If the dropped element is a minor, show only the minor name
-        if (minor) {
-            $(this).val(minor.minorName);
-        }
-    }
-}); */
 
 //DROPPABLE thing for the basic/free choice studies
 $('.course-name').droppable({
