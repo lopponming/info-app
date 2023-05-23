@@ -1062,7 +1062,7 @@ $('.toggleable').click(function() {
 
 
 //DROPPABLE minors BUT hide the minor courses once dropped THAT DOESN*T WORK
-$('.input-box').droppable({
+/* $('.input-box').droppable({
     drop: function (event, ui) {
         // Get the text from the dropped element
         var text = ui.draggable.text().trim();
@@ -1077,7 +1077,7 @@ $('.input-box').droppable({
             $(this).val(minor.minorName);
         }
     }
-});
+}); */
 
 //DROPPABLE thing for the basic/free choice studies
 $('.course-name').droppable({
@@ -1110,10 +1110,14 @@ $('#add-course-btn').on('click', function () {
     }).appendTo('#courseWrapper');
 });
 
-// WHEN DRAGGING course DIV input IS HIGHLIGHTED
+// WHEN DRAGGING course DIV input IS HIGHLIGHTED (FOR basic and free choice studies)
 $(function () {
-    // Add CSS class to .course-name input when draggable is being dragged
+    // Add CSS class to .course-name input when draggable is being dragged (FREE CHOICE)
     $('.draggable.freechoice').on('dragstart', function () {
+        $('.course-name').addClass('highlight');
+    });
+    //BASIC STUDIES MAKING THE input highlighted
+    $('.draggable.basicstudies').on('dragstart', function () {
         $('.course-name').addClass('highlight');
     });
 
