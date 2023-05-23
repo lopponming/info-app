@@ -78,6 +78,64 @@
                         <option value="10">10</option>
                     </select>
                 </div>
+                <div class="theMinorName">
+                    <label for="minor-name">MINOR:</label>
+                    <select id="minorTiming">
+                        <option value="1stYearspring">1st year spring</option>
+                        <option value=""selected>2nd year fall</option>
+                        <option value="2ndYearSpring">2nd year spring</option>
+                        <option value="3rdYearFall">3rd year fall</option>
+                        <option value="3rdYearSpring">3rd year spring</option>
+                        <option value="4thYearFall">4th year fall</option>
+                        <option value="4thYearSpring">4th year spring</option>
+                    </select>
+                    <input type="text" id="minor-name" class="selectedMinor" placeholder="drop minor here">
+                </div>
+                <div class="theMinorImportance">
+                    <label for="minor-importance">IMPORTANCE:</label>
+                    <select id="minor-importance">
+                        <option value="" disabled selected>select importance</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="theMinorName">
+                    <label for="minor-name">MINOR:</label>
+                    <select id="minorTiming">
+                        <option value="1stYearSpring">1st year spring</option>
+                        <option value="2ndYearFall">2nd year fall</option>
+                        <option value="" selected>2nd year spring</option>
+                        <option value="3rdYearFall">3rd year fall</option>
+                        <option value="3rdYearSpring">3rd year spring</option>
+                        <option value="4thYearFall">4th year fall</option>
+                        <option value="4thYearSpring">4th year spring</option>
+                    </select>
+                    <input type="text" id="minor-name" class="selectedMinor" placeholder="drop minor here">
+                </div>
+                <div class="theMinorImportance">
+                    <label for="minor-importance">IMPORTANCE:</label>
+                    <select id="minor-importance">
+                        <option value="" disabled selected>select importance</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
             </div>
             <button id="add-minor-btn" title="only use me if you must">add minor</button>
 
@@ -960,35 +1018,6 @@ let mySettings = {
     }
 }
 
-$(document).ready(function() {
-    for (var i = 0; i < 2; i++) {
-        var minor = $('<div>').addClass('theMinorName').append(
-            $('<label>').attr('for', 'minor-name-' + i).text('MINOR:'),
-            $('<input>').attr({
-                type: 'text',
-                id: 'minor-name-' + i,
-                name: 'minor-name-' + i,
-                placeholder: 'drop minor here'
-            }).addClass('selectedMinor').droppable(mySettings)
-        );
-        var importance = $('<div>').addClass('theMinorImportance').append(
-            $('<label>').attr('for', 'minor-importance-' + i).text('IMPORTANCE:'),
-            $('<select>').attr({
-                id: 'minor-importance-' + i,
-                name: 'minor-importance-' + i
-            }).append(function () {
-                var options = '<option value="" disabled selected>select importance</option>';
-                for (var j = 1; j <= 10; j++) {
-                options += '<option value="' + j + '">' + j + '</option>';
-                }
-                return options;
-            })
-        );
-        $('.input-box').append(minor, importance);
-    }
-});
-
-
 /* OUTPUT MINORS TO PAGE (SECOND TIME AROUND WITH SOME ADJUSTMENTS */
 function outPutMinors() {
     $('.minors').html('');
@@ -1021,6 +1050,16 @@ $('#add-minor-btn').on('click', function () {
     event.preventDefault();
     let myMinor = $('<div>').addClass('theMinorName').append(
         $('<label>').attr('for', 'minor-name').text('MINOR:'),
+        $('<select>').attr('id', 'minorTiming').append(function () {
+            var options = '<option value="1stYearSpring" >1st year spring</option>';
+            options += '<option value="2ndYearFall">2nd year fall</option>';
+            options += '<option value="2ndYearSpring">2nd year spring</option>';
+            options += '<option value="3rdYearFall">3rd year fall</option>';
+            options += '<option value="3rdYearSpring">3rd year spring</option>';
+            options += '<option value="4thYearFall">4th year fall</option>';
+            options += '<option value="4thYearSpring">4th year spring</option>';
+            return options;
+        }),
         $('<input>').attr({
             type: 'text',
             id: 'minor-name',

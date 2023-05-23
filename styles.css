@@ -116,7 +116,6 @@ select {
     padding: 14px;
     border: 1px solid #717171;
     border-radius: 5px;
-    /* margin-bottom: 1rem; */
     width: 100%;
     box-sizing: border-box;
 }
@@ -132,30 +131,15 @@ select#profession-list {
 .input-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
     grid-gap: 1rem;
 }
-  
-.theMinorName {
-    grid-column: 1;
-}
-  
-.theMinorImportance {
-    grid-column: 2;
-}
-  
-.minor-inputs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row: 2;
+
+input#minor-name {
+    padding: 14px;
 }
 
-.minor-inputs .minor-name {
-    grid-column: 1;
-}
-
-.minor-inputs .minor-importance {
-    grid-column: 2;
+select#minorTiming {
+    padding: 0.2rem;
 }
 
 .course-name.highlight {
