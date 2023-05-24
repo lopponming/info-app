@@ -1,31 +1,48 @@
 //color coding/mapping the courses (basic and free-choice)
 const colorMapping = {
     //basic studies first
-    'media channels and platforms': '#a4cfa6',
-    'media work methods': '#a4cfa6',
-    'introduction to visual design': 'linear-gradient(106deg, #ffb1b1 29%,#b0b0fc 29%, #b0b0fc 63%, #ffbfff 63%)',
-    'introduction to programming': '#ffbfff',
-    'introduction to video': '#ffbfff',
-    'introduction to animation': '#ffbfff',
-    'scriptwriting and storytelling': '#ffbfff',
-    'introduction to web tools': '#b0b0fc', //int media above
-    'perception': '#feffb4',
-    'contemporary art methods': '#feffb4',
-    'introduction to animation in fine art': '#feffb4',
-    'introduction to applied fine art': '#feffb4',
-    'introduction to fine art analysis': '#feffb4',
-    'introduction to moving image': '#feffb4',
-    'introduction to painting': '#feffb4',
-    'introduction to fine art photography': '#feffb4', //fine art above
-    'audio technology basics': '#bdffbd',
-    'live event technology basics': '#bdffbd',
-    'introduction to sound design': '#bdffbd',
-    'introduction to music business and entrepreneurship': '#bdffbd',
-    'introduction to song writing': '#bdffbd',
-    'introduction to record production': '#bdffbd',
-    'introduction to popular music theory': '#bdffbd',
-    'music production project': '#bdffbd',
-    // Add more mappings here
+    'media channels and platforms': '#bfefff',
+    'media work methods': '#bfefff',
+    'introduction to visual design': '#bfefff',
+    'introduction to programming': '#bfefff',
+    'introduction to video': '#bfefff',
+    'introduction to animation': '#bfefff',
+    'scriptwriting and storytelling': '#bfefff',
+    'introduction to web tools': '#bfefff', //int media above
+    'perception': '#ffd3b4',
+    'contemporary art methods': '#ffd3b4',
+    'introduction to animation in fine art': '#ffd3b4',
+    'introduction to applied fine art': '#ffd3b4',
+    'introduction to fine art analysis': '#ffd3b4',
+    'introduction to moving image': '#ffd3b4',
+    'introduction to painting': '#ffd3b4',
+    'introduction to fine art photography': '#ffd3b4', //fine art above
+    'audio technology basics': '#88e288',
+    'live event technology basics': '#88e288',
+    'introduction to sound design': '#88e288',
+    'introduction to music business and entrepreneurship': '#88e288',
+    'introduction to song writing': '#88e288',
+    'introduction to record production': '#88e288',
+    'introduction to popular music theory': '#88e288',
+    'music production project': '#88e288', //ends musProd
+    //free choice studies next
+    'introduction to visual design': '#bfefff',
+    'introduction to user experience design': '#bfefff',
+    'advanced visual design workshop': '#bfefff',
+    'advanced web design workshop': '#bfefff', //ends intMed
+    'introduction to animation in fine art': '#ffd3b4',
+    'introduction to painting': '#ffd3b4',
+    'advanced moving image': '#ffd3b4',
+    'life drawing': '#ffd3b4', //ends fine art
+    'introduction to sound design': '#88e288',
+    'advanced live event workshop': '#88e288',
+    'game sound design workshop': '#88e288', //end musProd
+    //the ones i don't know:
+    'content design workshop': '#f2bbdf',
+    'experimental media techniques workshop': '#f2bbdf',
+    'networked media culture': '#f2bbdf',
+    'media professional literature': '#f2bbdf',
+    'event management and marketing': '#f2bbdf',
   };
   
   // Function to create a draggable study element with color coding
@@ -33,8 +50,9 @@ const colorMapping = {
     var studyElement = $('<div>').text(courseName).addClass('draggable');
     if (courseType === 'basic' && colorMapping.hasOwnProperty(courseName)) {
       studyElement.css('background-color', colorMapping[courseName]);
-      studyElement.css('background-image', colorMapping[courseName]);
-    }
+    } else if (courseType === 'free-choice') {
+        studyElement.css('background-color', colorMapping[courseName]);
+      }
     return studyElement;
   }
 
