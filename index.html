@@ -80,7 +80,7 @@
                 </div>
                 <div class="theMinorName">
                     <label for="minor-name">MINOR:</label>
-                    <select id="minorTiming">
+                    <select id="minorTiming-1">
                         <option value="1stYearspring">1st year spring</option>
                         <option value=""selected>2nd year fall</option>
                         <option value="2ndYearSpring">2nd year spring</option>
@@ -89,11 +89,11 @@
                         <option value="4thYearFall">4th year fall</option>
                         <option value="4thYearSpring">4th year spring</option>
                     </select>
-                    <input type="text" id="minor-name" class="selectedMinor" placeholder="drop minor here">
+                    <input type="text" id="minor-name-1" class="selectedMinor" placeholder="drop minor here">
                 </div>
                 <div class="theMinorImportance">
                     <label for="minor-importance">IMPORTANCE:</label>
-                    <select id="minor-importance">
+                    <select id="minor-importance-1">
                         <option value="" disabled selected>select importance</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="theMinorName">
                     <label for="minor-name">MINOR:</label>
-                    <select id="minorTiming">
+                    <select id="minorTiming-2">
                         <option value="1stYearSpring">1st year spring</option>
                         <option value="2ndYearFall">2nd year fall</option>
                         <option value="" selected>2nd year spring</option>
@@ -118,11 +118,11 @@
                         <option value="4thYearFall">4th year fall</option>
                         <option value="4thYearSpring">4th year spring</option>
                     </select>
-                    <input type="text" id="minor-name" class="selectedMinor" placeholder="drop minor here">
+                    <input type="text" id="minor-name-2" class="selectedMinor" placeholder="drop minor here">
                 </div>
                 <div class="theMinorImportance">
                     <label for="minor-importance">IMPORTANCE:</label>
-                    <select id="minor-importance">
+                    <select id="minor-importance-2">
                         <option value="" disabled selected>select importance</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -1036,12 +1036,15 @@ function outPutMinors() {
 }
 outPutMinors();
 $('.expand-btn').on('click', function () {
+    $('.minors-list').on('click', '.expand-btn', function () {
     $(this).closest('.draggable').find('.course-list').toggle();
+    });
 });
+    /* $(this).closest('.draggable').find('.course-list').toggle();*/
 
 
 // Make the original minor input field droppable
-$('#minor-name').droppable(mySettings);
+$('#minor-name, #minor-name-1, #minor-name-2').droppable(mySettings);
 
 
 /* ADDING A NEW MINOR + MINOR IMPORTANCE */
