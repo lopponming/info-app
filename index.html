@@ -164,6 +164,7 @@
 
     <script src="jquery-3.6.3.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script src="colorMapping.js"></script>
 <script>
 
 /* HELP QUESTIONMARK POP_UP */
@@ -1007,8 +1008,6 @@ let studyPlanner = {
     ]
 }
 
-/* import colorMapping from './colorMapping.js'; */
-
 let mySettings = {
     drop: function (event, ui) {
         var text = ui.draggable.find(".minorName").text();
@@ -1085,14 +1084,22 @@ $('#add-minor-btn').on('click', function () {
 });
 
 /* OUTPUT FREE-CHOICE STUDIES TO PAGE */
-$.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
+/* $.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
     $('.freeChoice').append($('<div>').text(freeChoiceCourses.courseName).addClass('draggable freechoice'));
-});
+}); */
+$.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
+    var studyElement = createStudyElement(freeChoiceCourses.courseName, 'free-choice');
+    $('.freeChoice').append(studyElement);
+  });
 
 /* OUTPUT BASIC STUDIES TO PAGE */
-$.each(studyPlanner.basicStudies, function(index, basicStudies) {
+/* $.each(studyPlanner.basicStudies, function(index, basicStudies) {
     $('.basicStudies').append($('<div>').text(basicStudies.courseName).addClass('draggable basicstudies'));
-});
+}); */
+$.each(studyPlanner.basicStudies, function(index, basicStudies) {
+    var studyElement = createStudyElement(basicStudies.courseName, 'basic');
+    $('.basicStudies').append(studyElement);
+  });
 
 $('.draggable').draggable();
 
