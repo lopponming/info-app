@@ -3,7 +3,7 @@ const colorMapping = {
     //basic studies first
     'media channels and platforms': '#a4cfa6',
     'media work methods': '#a4cfa6',
-    'introduction to visual design': '#ffb1b1',
+    'introduction to visual design': 'linear-gradient(106deg, #ffb1b1 29%,#b0b0fc 29%, #b0b0fc 63%, #ffbfff 63%)',
     'introduction to programming': '#ffbfff',
     'introduction to video': '#ffbfff',
     'introduction to animation': '#ffbfff',
@@ -33,21 +33,10 @@ const colorMapping = {
     var studyElement = $('<div>').text(courseName).addClass('draggable');
     if (courseType === 'basic' && colorMapping.hasOwnProperty(courseName)) {
       studyElement.css('background-color', colorMapping[courseName]);
+      studyElement.css('background-image', colorMapping[courseName]);
     }
     return studyElement;
   }
-  
-  /* OUTPUT FREE-CHOICE STUDIES TO PAGE */
- /*  $.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
-    var studyElement = createStudyElement(freeChoiceCourses.courseName, 'free-choice');
-    $('.freeChoice').append(studyElement);
-  }); */
-  
-  /* OUTPUT BASIC STUDIES TO PAGE */
-  /* $.each(studyPlanner.basicStudies, function(index, basicStudies) {
-    var studyElement = createStudyElement(basicStudies.courseName, 'basic');
-    $('.basicStudies').append(studyElement);
-  }); */
 
 
   

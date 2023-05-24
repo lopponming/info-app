@@ -464,7 +464,7 @@ let studyPlanner = {
             credits: 5
         },
         {
-            courseName: 'introduction to visual design',
+            courseName: 'introduction to web tools',
             scheduledTime: 'fall',
             credits: 3
         },
@@ -489,7 +489,7 @@ let studyPlanner = {
             credits: 3
         },
         {
-            courseName: 'introduction to web tools',
+            courseName: 'introduction to visual design',
             scheduledTime: 'fall',
             credits: 3
         }, //THIS ENDS THE INT MEDIA BASIC STUDIES
@@ -1129,25 +1129,8 @@ $('.course-name').droppable({
     }
 });
 
-//NEW INPUT for basic/free choice studies is made by this:
-$('#add-course-btn').on('click', function () {
-    event.preventDefault();
-    $('<input>').attr({
-        type: 'text',
-        class: 'course-name',
-        placeholder: 'drop course here'
-    }).addClass('droppable-course-name').droppable({
-        drop: function (event, ui) {
-            var text = ui.draggable.text();
-            $(this).val(text);
-            ui.draggable.remove();
-            $('.highlight').removeClass('highlight');
-        }
-    }).appendTo('#courseWrapper');
-});
-
 // WHEN DRAGGING course DIV input IS HIGHLIGHTED (FOR basic and free choice studies)
-$(function () {
+/* $(function () {
     // Add CSS class to .course-name input when draggable is being dragged (FREE CHOICE)
     $('.draggable.freechoice').on('dragstart', function () {
         $('.course-name').addClass('highlight');
@@ -1166,7 +1149,48 @@ $(function () {
     $('.course-name').on('dragleave', function () {
         $('.course-name').removeClass('highlight');
     });
+}); */
+$(function () {
+  // Function to handle highlighting of input
+  function highlightInput() {
+    $('.course-name').addClass('highlight');
+  }
+
+  // Function to handle removing highlight from input
+  function removeHighlight() {
+    $('.course-name').removeClass('highlight');
+  }
+
+  // Add CSS class to .course-name input when draggable is being dragged (FREE CHOICE)
+  $('.freeChoice').on('dragstart', '.draggable.freechoice', highlightInput);
+  
+  // Add CSS class to .course-name input when draggable is being dragged (BASIC STUDIES)
+  $('.basicStudies').on('dragstart', '.draggable.basicstudies', highlightInput);
+
+  // Remove CSS class from .course-name input when draggable is dropped
+  $('.ui-droppable').on('drop', removeHighlight);
+
+  // Remove CSS class from .course-name input when draggable is dragged out of it
+  $('.course-name').on('dragleave', removeHighlight);
 });
+
+//NEW INPUT for basic/free choice studies is made by this:
+$('#add-course-btn').on('click', function () {
+    event.preventDefault();
+    $('<input>').attr({
+        type: 'text',
+        class: 'course-name',
+        placeholder: 'drop course here'
+    }).addClass('droppable-course-name').droppable({
+        drop: function (event, ui) {
+            var text = ui.draggable.text();
+            $(this).val(text);
+            ui.draggable.remove();
+            $('.highlight').removeClass('highlight');
+        }
+    }).appendTo('#courseWrapper');
+});
+
 
 
 //SUBMIT BUTTON
