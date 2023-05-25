@@ -1197,7 +1197,7 @@ $('#add-course-btn').on('click', function () {
 
 
 //SUBMIT BUTTON
-$('#submit-btn').on('click', function () {
+/* $('#submit-btn').on('click', function () {
     let selectedProfession = $('#profession-list').val();
     let profession = findProfessionByName(selectedProfession);
     $('.selectedMinor').each(function (index, element) {
@@ -1216,7 +1216,58 @@ function findProfessionByName(professionName) {
         } else {
             return null;
         }
+} */
+
+// SUBMIT BUTTON
+$('#submit-btn').on('click', function () {
+  let selectedProfession = $('#profession-list').val();
+  let profession = findProfessionByName(selectedProfession);
+
+  // Create an object to store the submitted answers
+  let submittedAnswers = {
+    professionName: selectedProfession,
+    relevantMinors: [],
+    relevantFreeChoiceCourses: []
+  };
+
+  // Iterate over the selected minors and add them to the submitted answers
+  $('.selectedMinor').each(function (index, element) {
+    submittedAnswers.relevantMinors.push({
+      minorName: element.value,
+      minorImportance: 10 // Set the importance value as needed
+    });
+  });
+
+  // Iterate over the selected free choice courses and add them to the submitted answers
+  $('.selectedFreeChoiceCourse').each(function (index, element) {
+    submittedAnswers.relevantFreeChoiceCourses.push({
+      courseName: element.value,
+      freeChoiceCoursesImportance: 10 // Set the importance value as needed
+    });
+  });
+
+  // Add the submitted answers to the corresponding profession object
+  if (profession) {
+    profession.submittedAnswers = submittedAnswers;
+  }
+
+  console.log(studyPlanner);
+
+  // Show alert pop-up
+  alert("Thank you so much for your help!");
+});
+
+function findProfessionByName(professionName) {
+  const profession = studyPlanner.professions.find(prof => prof.professionName === professionName);
+  if (profession) {
+    return profession;
+  } else {
+    return null;
+  }
 }
+
+
+
 </script>
 
 </body>
