@@ -15,7 +15,7 @@
 
     <div class="grid-container">
         <header>
-            <p>mediapolis study planner work in progress</p>
+            <p>mediapolis study planner<br>work in progress</p>
             <h2>what to study for the right profession?</h2>
             <div class="helpCircle">
                 <span id="help">?</span>
@@ -35,12 +35,8 @@
                     <h4>minors:</h4>
                     <div id="howToDoThis">?</div>
                 </div>
-<<<<<<< Updated upstream
-                <div id="howToDoThisHelp">choose a minor and drag the minor by it's name and drop it where it says "drop minor here"</div>
-=======
                 <div id="howToDoThisHelp">Choose a minor and drag the minor by it's name and drop it where it says "drop minor here" - and the importance: the higher the number the better the choice to pick that minor over others, minors can of course have the same importance as well.<br><br>Kindly, think first and drag and drop later because if you want to change your mind before hitting the SUBMIT button you're going to have to refresh the website!</div>
->>>>>>> Stashed changes
-            </div>
+                </div>
             <div class="minors-list"></div>
         </aside>
 
@@ -55,11 +51,78 @@
             <div class="input-box">
                 <div class="theMinorName">
                     <label for="minor-name">MINOR:</label>
+                    <select id="minorTiming">
+                        <option value="" selected>1st year spring</option>
+                        <option value="2ndYearFall">2nd year fall</option>
+                        <option value="2ndYearSpring">2nd year spring</option>
+                        <option value="3rdYearFall">3rd year fall</option>
+                        <option value="3rdYearSpring">3rd year spring</option>
+                        <option value="4thYearFall">4th year fall</option>
+                        <option value="4thYearSpring">4th year spring</option>
+                    </select>
                     <input type="text" id="minor-name" class="selectedMinor" placeholder="drop minor here">
                 </div>
                 <div class="theMinorImportance">
                     <label for="minor-importance">IMPORTANCE:</label>
                     <select id="minor-importance">
+                        <option value="" disabled selected>select importance</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="theMinorName">
+                    <label for="minor-name">MINOR:</label>
+                    <select id="minorTiming-1">
+                        <option value="1stYearspring">1st year spring</option>
+                        <option value=""selected>2nd year fall</option>
+                        <option value="2ndYearSpring">2nd year spring</option>
+                        <option value="3rdYearFall">3rd year fall</option>
+                        <option value="3rdYearSpring">3rd year spring</option>
+                        <option value="4thYearFall">4th year fall</option>
+                        <option value="4thYearSpring">4th year spring</option>
+                    </select>
+                    <input type="text" id="minor-name-1" class="selectedMinor" placeholder="drop minor here">
+                </div>
+                <div class="theMinorImportance">
+                    <label for="minor-importance">IMPORTANCE:</label>
+                    <select id="minor-importance-1">
+                        <option value="" disabled selected>select importance</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="theMinorName">
+                    <label for="minor-name">MINOR:</label>
+                    <select id="minorTiming-2">
+                        <option value="1stYearSpring">1st year spring</option>
+                        <option value="2ndYearFall">2nd year fall</option>
+                        <option value="" selected>2nd year spring</option>
+                        <option value="3rdYearFall">3rd year fall</option>
+                        <option value="3rdYearSpring">3rd year spring</option>
+                        <option value="4thYearFall">4th year fall</option>
+                        <option value="4thYearSpring">4th year spring</option>
+                    </select>
+                    <input type="text" id="minor-name-2" class="selectedMinor" placeholder="drop minor here">
+                </div>
+                <div class="theMinorImportance">
+                    <label for="minor-importance">IMPORTANCE:</label>
+                    <select id="minor-importance-2">
                         <option value="" disabled selected>select importance</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -101,6 +164,7 @@
 
     <script src="jquery-3.6.3.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script src="colorMapping.js"></script>
 <script>
 
 /* HELP QUESTIONMARK POP_UP */
@@ -400,7 +464,7 @@ let studyPlanner = {
             credits: 5
         },
         {
-            courseName: 'introduction to visual design',
+            courseName: 'introduction to web tools',
             scheduledTime: 'fall',
             credits: 3
         },
@@ -425,7 +489,7 @@ let studyPlanner = {
             credits: 3
         },
         {
-            courseName: 'introduction to web tools',
+            courseName: 'introduction to visual design',
             scheduledTime: 'fall',
             credits: 3
         }, //THIS ENDS THE INT MEDIA BASIC STUDIES
@@ -564,8 +628,34 @@ let studyPlanner = {
             ]
         },
         {
-            minorName: 'games academy',
+            minorName: 'GA 2D game design and development',
             scheduledTime: 'fall',
+            courses: [
+                {
+                    courseName: 'game design',
+                    credits: 5
+                },
+                {
+                    courseName: 'game business and production',
+                    credits: 5
+                },
+                {
+                    courseName: 'playtesting and usability',
+                    credits: 5
+                },
+                {
+                    courseName: '2D game design and construction for game artists',
+                    credits: 5
+                },
+                {
+                    courseName: 'game project 1',
+                    credits: 10
+                }
+            ]
+        },
+        {
+            minorName: 'GA 3D modelling and animation',
+            scheduledTime: 'spring',
             courses: [
                 {
                     courseName: 'basics of 3D modeling for game artists',
@@ -796,11 +886,37 @@ let studyPlanner = {
                     credits: 5
                 }
             ]
+        },
+        {
+            minorName: 'working as an entrepreneur',
+            scheduledTime: 'spring',
+            courses: [
+                {
+                    courseName: 'HUBS yrityshautomo',
+                    credits: 5
+                },
+                {
+                    courseName: 'copyrights and contracts',
+                    credits: 5
+                },
+                {
+                    courseName: 'networking and marketing',
+                    credits: 5
+                },
+                {
+                    courseName: 'project working in a co-operative 1',
+                    credits: 5
+                },
+                {
+                    courseName: 'project working in a co-operative 2',
+                    credits: 5
+                }
+            ]
         } // THIS ENDS THE MUSIC PRODUCTION MINORS
     ],
     freeChoiceCourses: [
         {
-            courseName: 'introduction to animation in fine art',
+            courseName: 'introduction to visual design',
             scheduledTime: 'spring',
             credits: 3
         },
@@ -810,12 +926,17 @@ let studyPlanner = {
             credits: 3
         },
         {
-            courseName: 'advanced web design workshop',
+            courseName: 'advanced visual design workshop',
             scheduledTime: 'spring',
             credits: 5
         },
         {
-            courseName: 'introduction to visual design',
+            courseName: 'advanced web design workshop',
+            scheduledTime: 'spring',
+            credits: 5
+        },   
+        {
+            courseName: 'introduction to animation in fine art',
             scheduledTime: 'spring',
             credits: 3
         },
@@ -825,19 +946,19 @@ let studyPlanner = {
             credits: 3
         },
         {
+            courseName: 'advanced moving image',
+            scheduledTime: 'spring',
+            credits: 5
+        },
+        {
+            courseName: 'life drawing',
+            scheduledTime: 'spring',
+            credits: 5
+        },
+        {
             courseName: 'introduction to sound design',
             scheduledTime: 'spring',
             credits: 3
-        },
-        {
-            courseName: 'self branding',
-            scheduledTime: 'spring',
-            credits: 1
-        },
-        {
-            courseName: 'advanced visual design workshop',
-            scheduledTime: 'spring',
-            credits: 5
         },
         {
             courseName: 'advanced live event workshop',
@@ -860,16 +981,6 @@ let studyPlanner = {
             credits: 5
         },
         {
-            courseName: 'sketch book seminar',
-            scheduledTime: 'spring',
-            credits: 5
-        },
-        {
-            courseName: 'advanced moving image',
-            scheduledTime: 'spring',
-            credits: 5
-        },
-        {
             courseName: 'networked media culture',
             scheduledTime: 'spring',
             credits: 5
@@ -884,14 +995,18 @@ let studyPlanner = {
             scheduledTime: 'spring',
             credits: 5
         },
-        {
-            courseName: 'life drawing',
+        /* {
+            courseName: 'sketch book seminar',
             scheduledTime: 'spring',
             credits: 5
-        }
+        },
+        {
+            courseName: 'self branding',
+            scheduledTime: 'spring',
+            credits: 1
+        } */
     ]
 }
-
 
 let mySettings = {
     drop: function (event, ui) {
@@ -901,35 +1016,6 @@ let mySettings = {
         outPutMinors();
     }
 }
-
-$(document).ready(function() {
-    for (var i = 0; i < 2; i++) {
-        var minor = $('<div>').addClass('theMinorName').append(
-            $('<label>').attr('for', 'minor-name-' + i).text('MINOR:'),
-            $('<input>').attr({
-                type: 'text',
-                id: 'minor-name-' + i,
-                name: 'minor-name-' + i,
-                placeholder: 'drop minor here'
-            }).addClass('selectedMinor').droppable(mySettings)
-        );
-        var importance = $('<div>').addClass('theMinorImportance').append(
-            $('<label>').attr('for', 'minor-importance-' + i).text('IMPORTANCE:'),
-            $('<select>').attr({
-                id: 'minor-importance-' + i,
-                name: 'minor-importance-' + i
-            }).append(function () {
-                var options = '<option value="" disabled selected>select importance</option>';
-                for (var j = 1; j <= 10; j++) {
-                options += '<option value="' + j + '">' + j + '</option>';
-                }
-                return options;
-            })
-        );
-        $('.input-box').append(minor, importance);
-    }
-});
-
 
 /* OUTPUT MINORS TO PAGE (SECOND TIME AROUND WITH SOME ADJUSTMENTS */
 function outPutMinors() {
@@ -950,12 +1036,15 @@ function outPutMinors() {
 }
 outPutMinors();
 $('.expand-btn').on('click', function () {
+    $('.minors-list').on('click', '.expand-btn', function () {
     $(this).closest('.draggable').find('.course-list').toggle();
+    });
 });
+    /* $(this).closest('.draggable').find('.course-list').toggle();*/
 
 
 // Make the original minor input field droppable
-$('#minor-name').droppable(mySettings);
+$('#minor-name, #minor-name-1, #minor-name-2').droppable(mySettings);
 
 
 /* ADDING A NEW MINOR + MINOR IMPORTANCE */
@@ -963,6 +1052,16 @@ $('#add-minor-btn').on('click', function () {
     event.preventDefault();
     let myMinor = $('<div>').addClass('theMinorName').append(
         $('<label>').attr('for', 'minor-name').text('MINOR:'),
+        $('<select>').attr('id', 'minorTiming').append(function () {
+            var options = '<option value="1stYearSpring" >1st year spring</option>';
+            options += '<option value="2ndYearFall">2nd year fall</option>';
+            options += '<option value="2ndYearSpring">2nd year spring</option>';
+            options += '<option value="3rdYearFall">3rd year fall</option>';
+            options += '<option value="3rdYearSpring">3rd year spring</option>';
+            options += '<option value="4thYearFall">4th year fall</option>';
+            options += '<option value="4thYearSpring">4th year spring</option>';
+            return options;
+        }),
         $('<input>').attr({
             type: 'text',
             id: 'minor-name',
@@ -988,14 +1087,22 @@ $('#add-minor-btn').on('click', function () {
 });
 
 /* OUTPUT FREE-CHOICE STUDIES TO PAGE */
-$.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
+/* $.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
     $('.freeChoice').append($('<div>').text(freeChoiceCourses.courseName).addClass('draggable freechoice'));
-});
+}); */
+$.each(studyPlanner.freeChoiceCourses, function(index, freeChoiceCourses) {
+    var studyElement = createStudyElement(freeChoiceCourses.courseName, 'free-choice');
+    $('.freeChoice').append(studyElement);
+  });
 
 /* OUTPUT BASIC STUDIES TO PAGE */
-$.each(studyPlanner.basicStudies, function(index, basicStudies) {
+/* $.each(studyPlanner.basicStudies, function(index, basicStudies) {
     $('.basicStudies').append($('<div>').text(basicStudies.courseName).addClass('draggable basicstudies'));
-});
+}); */
+$.each(studyPlanner.basicStudies, function(index, basicStudies) {
+    var studyElement = createStudyElement(basicStudies.courseName, 'basic');
+    $('.basicStudies').append(studyElement);
+  });
 
 $('.draggable').draggable();
 
@@ -1011,25 +1118,6 @@ $('.toggleable').click(function() {
     $('.freeChoice').toggle(courseType == 'free-choice');
 });
 
-
-//DROPPABLE minors BUT hide the minor courses once dropped THAT DOESN*T WORK
-$('.input-box').droppable({
-    drop: function (event, ui) {
-        // Get the text from the dropped element
-        var text = ui.draggable.text().trim();
-
-        // Check if the dropped element is a minor
-        var minor = studyPlanner.minors.find(function (minor) {
-            return minor.minorName === text;
-        });
-
-        // If the dropped element is a minor, show only the minor name
-        if (minor) {
-            $(this).val(minor.minorName);
-        }
-    }
-});
-
 //DROPPABLE thing for the basic/free choice studies
 $('.course-name').droppable({
     drop: function (event, ui) {
@@ -1042,6 +1130,51 @@ $('.course-name').droppable({
         // Remove the dropped element
         ui.draggable.remove();
     }
+});
+
+// WHEN DRAGGING course DIV input IS HIGHLIGHTED (FOR basic and free choice studies)
+/* $(function () {
+    // Add CSS class to .course-name input when draggable is being dragged (FREE CHOICE)
+    $('.draggable.freechoice').on('dragstart', function () {
+        $('.course-name').addClass('highlight');
+    });
+    //BASIC STUDIES MAKING THE input highlighted
+    $('.draggable.basicstudies').on('dragstart', function () {
+        $('.course-name').addClass('highlight');
+    });
+
+    // Remove CSS class from .course-name input when draggable is dropped
+    $('.ui-droppable').on('drop', function () {
+        $(this).removeClass('highlight');
+    });
+
+    // Remove CSS class from .course-name input when draggable is dragged out of it
+    $('.course-name').on('dragleave', function () {
+        $('.course-name').removeClass('highlight');
+    });
+}); */
+$(function () {
+  // Function to handle highlighting of input
+  function highlightInput() {
+    $('.course-name').addClass('highlight');
+  }
+
+  // Function to handle removing highlight from input
+  function removeHighlight() {
+    $('.course-name').removeClass('highlight');
+  }
+
+  // Add CSS class to .course-name input when draggable is being dragged (FREE CHOICE)
+  $('.freeChoice').on('dragstart', '.draggable.freechoice', highlightInput);
+  
+  // Add CSS class to .course-name input when draggable is being dragged (BASIC STUDIES)
+  $('.basicStudies').on('dragstart', '.draggable.basicstudies', highlightInput);
+
+  // Remove CSS class from .course-name input when draggable is dropped
+  $('.ui-droppable').on('drop', removeHighlight);
+
+  // Remove CSS class from .course-name input when draggable is dragged out of it
+  $('.course-name').on('dragleave', removeHighlight);
 });
 
 //NEW INPUT for basic/free choice studies is made by this:
@@ -1061,23 +1194,6 @@ $('#add-course-btn').on('click', function () {
     }).appendTo('#courseWrapper');
 });
 
-// WHEN DRAGGING course DIV input IS HIGHLIGHTED
-$(function () {
-    // Add CSS class to .course-name input when draggable is being dragged
-    $('.draggable.freechoice').on('dragstart', function () {
-        $('.course-name').addClass('highlight');
-    });
-
-    // Remove CSS class from .course-name input when draggable is dropped
-    $('.ui-droppable').on('drop', function () {
-        $(this).removeClass('highlight');
-    });
-
-    // Remove CSS class from .course-name input when draggable is dragged out of it
-    $('.course-name').on('dragleave', function () {
-        $('.course-name').removeClass('highlight');
-    });
-});
 
 
 //SUBMIT BUTTON
@@ -1089,6 +1205,9 @@ $('#submit-btn').on('click', function () {
     })
     
     console.log(profession);
+
+    // Show alert pop-up
+    alert("Thank you so much for your help!");
 })
 function findProfessionByName(professionName) {
     const profession = studyPlanner.professions.find(prof => prof.professionName == professionName);

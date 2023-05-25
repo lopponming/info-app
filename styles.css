@@ -69,12 +69,25 @@ h2 {
     letter-spacing: 0.2rem;
 }
   
-#tooltip, #howToDoThisHelp {
+#tooltip {
     display: none;
     position: absolute;
     top: 90px;
     right: 30px;
     width: 200px;
+    color: #e3e3e3;
+    background-color: #17283c;
+    border: 2px solid #dc8f8f;
+    padding: 10px;
+    z-index: 9999;
+}
+
+#howToDoThisHelp {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    width: 190px;
     color: #e3e3e3;
     background-color: #17283c;
     border: 2px solid #dc8f8f;
@@ -103,7 +116,6 @@ select {
     padding: 14px;
     border: 1px solid #717171;
     border-radius: 5px;
-    /* margin-bottom: 1rem; */
     width: 100%;
     box-sizing: border-box;
 }
@@ -119,30 +131,15 @@ select#profession-list {
 .input-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
     grid-gap: 1rem;
 }
-  
-.theMinorName {
-    grid-column: 1;
-}
-  
-.theMinorImportance {
-    grid-column: 2;
-}
-  
-.minor-inputs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row: 2;
+
+input#minor-name {
+    padding: 14px;
 }
 
-.minor-inputs .minor-name {
-    grid-column: 1;
-}
-
-.minor-inputs .minor-importance {
-    grid-column: 2;
+select#minorTiming {
+    padding: 0.2rem;
 }
 
 .course-name.highlight {
@@ -192,8 +189,12 @@ button:hover {
 
 #submit-btn {
     justify-content: center;
+    letter-spacing: 0.2rem;
     margin-top: 2rem;
     background-color: #dca2a2;
+    color: #ffffff;
+    padding: 1rem;
+    font-weight: 400;
 }
 
 /* basket styles (aka the basket that includes minors, free-choice and so on */
@@ -202,15 +203,26 @@ button:hover {
     height: 0;
 }  */
 
+#howToDoThis {
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .headerContainer {
     display: flex;
     align-items: center;
 }
 
+.studyBasketHeader:hover #howToDoThisHelp {
+    display: block;
+    cursor: pointer;
+}
+
 aside#studyBasketRight {
     display: flex;
     flex-direction: column;
-    min-width: 335px;
+    max-width: 335px;
 }
 
 #studyBasketRight h4 {
@@ -227,7 +239,7 @@ aside#studyBasketRight {
     text-shadow: 1px 1px 5px #23272b;
     padding: 1rem;
     margin: 0 0 1rem 0;
-    min-width: 86px;
+    min-width: 110px;
 }
 
 ul.course-list {
